@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Skeletor Loading</title>
+    <meta charset="utf-8">
+
+    <link rel="stylesheet" type="text/css" href="jquery.skeleton.css">
+    <style type="text/css" media="screen">
+        body {
+            max-width: 600px;
+            margin: 0 auto;
+        }
+        div {
+            margin: 20px 0;
+        }
+    </style>
+</head>
+<body>
+
+    <section id="main-content">
+        <div>
+            Main content index.html
+        </div>
+    </section>
+
+    <script src="jquery-3.3.1.min.js" type="text/javascript"></script>
+    <script src="jquery.scheletrone.js" type="text/javascript"></script>
+
+    <script>
+        $(function() {
+            var instance = $('#main-content').scheletrone({
+                    url: "index2.html",
+                    debug: {
+                        latency: 3000
+                    },
+                    incache: false,
+                    onComplete: function() {
+                        console.info('plugin is loaded')
+                        console.info('wait 3 secs for the data');
+                    }
+            });
+        });
+    </script>
+</body>
+</html>
